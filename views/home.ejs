@@ -1,0 +1,27 @@
+
+<%- include("partials/header"); -%>
+    <h1>Home</h1>
+    <p style="margin-bottom: 30px;"> <%= startingContent %> </p>
+
+
+  
+  <%  posts.forEach(function(post){ %>
+    <form action="/delete" method="post">
+    <h1><%=post.title%></h1>
+    <h3><%=post.author %></h3>
+    <h4><%= post.date %></h4>
+    <p>
+    <%=post.content.substring(0, 100) + " ..."%>
+    <a href="/posts/<%=post._id%>">Read More</a>
+    </p>
+   
+    <input type="checkbox" name= "checkbox" value = "<%=post._id%>" ">
+    <button class="delPostBtn" onChange = "this.form.submit()">Delete Post</button>
+  </form>
+ 
+    <% }) %>
+  
+
+
+
+<%- include("partials/footer"); -%>
