@@ -31,8 +31,8 @@ app.use(session({
   saveUninitialized: false
 }));
 
-// app.use(passport.initialize());
-// app.use(passport.session());
+app.use(passport.initialize());
+app.use(passport.session());
 
 mongoose.connect("mongodb+srv://kaifyIslam:test123@cluster0.fkvkf.mongodb.net/HubDB", { useNewUrlParser: true });
 mongoose.set("useCreateIndex", true);
