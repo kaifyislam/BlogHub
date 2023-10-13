@@ -1,27 +1,27 @@
-
+<!-- On home.ejs -->
 <%- include("partials/header"); -%>
-    <h1>Home</h1>
-    <p style="margin-bottom: 30px;"> <%= startingContent %> </p>
 
+<div class="container">
+  <h1><i>Home</i></h1>
+  <h3 style="margin-bottom: 50px;"><i>Celebrate the joy of exploration as you enter the doors of my BLOG WEBSITE , a place where words come alive to ignite your curiosity and imagination</i></h3>
 
-  
-  <%  posts.forEach(function(post){ %>
-    <form action="/delete" method="post">
-    <h1><%=post.title%></h1>
-    <h3><%=post.author %></h3>
-    <h4><%= post.date %></h4>
-    <p>
-    <%=post.content.substring(0, 100) + " ..."%>
-    <a href="/posts/<%=post._id%>">Read More</a>
-    </p>
-   
-    <input type="checkbox" name= "checkbox" value = "<%=post._id%>" ">
-    <button class="delPostBtn" onChange = "this.form.submit()">Delete Post</button>
-  </form>
- 
-    <% }) %>
-  
+  <% posts.forEach(function(post){ %>
+    <form action="/delete" method="post" class="blog-post">
+      <h1><%= post.title %></h1>
+      <h3><%= post.author %></h3>
+      <h4><%= post.date %></h4>
+      <p><%= post.content.substring(0, 100) + " ..." %></p>
+      <a href="/posts/<%= post._id %>">Read More</a>
+    
+      <div class="form-group">
+        <input type="checkbox" name="checkbox" value="<%= post._id %>" id="checkbox<%= post._id %>">
+        
+      </div>
+      <button class="delPostBtn">Delete Post</button>
+    </form>
+    
+  <% }) %>
 
+  <!-- Add a single "Delete Post" button with red color and border radius -->
 
-
-<%- include("partials/footer"); -%>
+</div>
