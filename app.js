@@ -34,7 +34,7 @@ app.use(session({
 // app.use(passport.initialize());
 // app.use(passport.session());
 
-mongoose.connect("mongodb+srv://kaifyIslam:test123@cluster0.fkvkf.mongodb.net/oneDB", { useNewUrlParser: true });
+mongoose.connect("mongodb+srv://kaifyIslam:test123@cluster0.fkvkf.mongodb.net/HubDB", { useNewUrlParser: true });
 mongoose.set("useCreateIndex", true);
 
 const userSchema = new mongoose.Schema({
