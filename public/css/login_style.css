@@ -1,0 +1,40 @@
+/* Add this CSS to your stylesheet */
+body {
+   
+  background-size: cover;
+  background: linear-gradient(135deg, #2b3649, #252c36);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  animation: gradientAnimation 10s ease infinite alternate;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background: linear-gradient(135deg, #2b3649, #252c36);
+  }
+  100% {
+    background: linear-gradient(135deg, #2b3649, #c4c4c4);
+  }
+}
+
+.jumbotron {
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  padding: 20px;
+  
+}
+
+.container {
+  animation: slideIn 1s ease;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
