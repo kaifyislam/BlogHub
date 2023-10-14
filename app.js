@@ -75,7 +75,7 @@ passport.deserializeUser(function(id, done) {
 passport.use(new GoogleStrategy({
   clientID: '67213339349-ub7ci9ssl1r4shjtpgovon6avq7nn9qi.apps.googleusercontent.com',
   clientSecret: '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',
-  callbackURL: "https://kaifys-hub.onrender.com/auth/google/secrets",
+  callbackURL: "https://kaifys-blog.onrender.com/auth/google/secrets",
   
 },
 function(accessToken, refreshToken, profile, cb) {
