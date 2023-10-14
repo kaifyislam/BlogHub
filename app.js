@@ -73,8 +73,8 @@ passport.deserializeUser(function(id, done) {
 });
 
 passport.use(new GoogleStrategy({
-  clientID: 67213339349-ub7ci9ssl1r4shjtpgovon6avq7nn9qi.apps.googleusercontent.com,
-  clientSecret: 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,
+  clientID: 67213339349-2vijv55nomfomkgqrarcf9011ijgc9ar.apps.googleusercontent.com,
+  clientSecret: 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,
   callbackURL: "https://kaifys-hub.onrender.com/auth/google/secrets",
   
 },
@@ -85,18 +85,18 @@ function(accessToken, refreshToken, profile, cb) {
   });
 }
 ));
-passport.use(new FacebookStrategy({
-  clientID: 274397585492877,
-  clientSecret: 57762452ef72270ab191c37ab8f29ea3,
-  callbackURL: "https://kaifys-hub.onrender.com/auth/facebook/secrets",
-},
-function(accessToken, refreshToken, profile, cb) {
-  console.log(profile);
-  User.findOrCreate({ username: profile.displayName, facebookId: profile.id }, function(err, user) {
-    return cb(err, user);
-  });
-}
-));
+// passport.use(new FacebookStrategy({
+//   clientID: 274397585492877,
+//   clientSecret: 57762452ef72270ab191c37ab8f29ea3,
+//   callbackURL: "https://kaifys-hub.onrender.com/auth/facebook/secrets",
+// },
+// function(accessToken, refreshToken, profile, cb) {
+//   console.log(profile);
+//   User.findOrCreate({ username: profile.displayName, facebookId: profile.id }, function(err, user) {
+//     return cb(err, user);
+//   });
+// }
+// ));
 
 // Middleware to check if the user is authenticated
 function ensureAuthenticated(req, res, next) {
