@@ -87,8 +87,8 @@ function(accessToken, refreshToken, profile, cb) {
 }
 ));
 passport.use(new FacebookStrategy({
-  clientID: 274397585492877,
-  clientSecret: 57762452ef72270ab191c37ab8f29ea3,
+  clientID: process.env.APP_ID,
+  clientSecret: process.env.APP_SECRET,
   callbackURL: "https://kaifys-blog.onrender.com/auth/facebook/secrets",
 },
 function(accessToken, refreshToken, profile, cb) {
