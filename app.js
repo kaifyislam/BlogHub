@@ -73,8 +73,8 @@ passport.deserializeUser(function(id, done) {
 });
 
 passport.use(new GoogleStrategy({
-  clientID: '67213339349-9ohbrfep3oi6hvo4gf7u8n055ncdrciv.apps.googleusercontent.com',
-  clientSecret: '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',
+  clientID: proc.env.CLIENT_ID,
+  clientSecret: proc.env.CLIENT_SECRET,
   callbackURL: "https://kaifys-blog.onrender.com/auth/google/secrets",
   
 },
