@@ -85,18 +85,18 @@ function(accessToken, refreshToken, profile, cb) {
   });
 }
 ));
-// passport.use(new FacebookStrategy({
-//   clientID: process.env.APP_ID,
-//   clientSecret: process.env.APP_SECRET,
-//   callbackURL: "https://kaifys-hub.onrender.com/auth/google/secrets",
-// },
-// function(accessToken, refreshToken, profile, cb) {
-//   console.log(profile);
-//   User.findOrCreate({ username: profile.displayName, facebookId: profile.id }, function(err, user) {
-//     return cb(err, user);
-//   });
-// }
-// ));
+passport.use(new FacebookStrategy({
+  clientID: process.env.APP_ID,
+  clientSecret: process.env.APP_SECRET,
+  callbackURL: "https://kaifys-hub.onrender.com/auth/facebook/secrets",
+},
+function(accessToken, refreshToken, profile, cb) {
+  console.log(profile);
+  User.findOrCreate({ username: profile.displayName, facebookId: profile.id }, function(err, user) {
+    return cb(err, user);
+  });
+}
+));
 
 // Middleware to check if the user is authenticated
 function ensureAuthenticated(req, res, next) {
