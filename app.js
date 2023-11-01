@@ -226,9 +226,13 @@ app.post("/login", function(req, res) {
     username: req.body.username,
     password: req.body.password
   });
+
   req.login(user, function(err) {
     if (err) {
       console.log(err);
+      // Set an error message
+      req.flash("error", "Incorrect username or password");
+      res.redirect("/login"); // Redirect back to the login page
     } else {
       passport.authenticate("local")(req, res, function() {
         res.redirect("/secrets");
@@ -236,6 +240,7 @@ app.post("/login", function(req, res) {
     }
   });
 });
+
 
 app.listen(3000, function() {
   console.log("Server started on port 3000.");
